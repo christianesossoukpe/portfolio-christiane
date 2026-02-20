@@ -17,8 +17,17 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Ici vous pouvez ajouter la logique d'envoi du formulaire
-    console.log("Form submitted:", formData)
+
+    const text = encodeURIComponent(
+      `Bonjour Christiane,%0A%0A` +
+        `Nom : ${formData.name}%0A` +
+        `Email : ${formData.email}%0A` +
+        `Sujet : ${formData.subject}%0A%0A` +
+        `Message : ${formData.message}`
+    )
+
+    // Numéro WhatsApp : +229 01 96 21 23 10 -> 2290196212310
+    window.open(`https://wa.me/2290196212310?text=${text}`, "_blank")
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,11 +38,11 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Contactez-moi</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-neutral-100 mb-4">Contactez-moi</h2>
+          <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
             Vous avez un projet en tête ? N'hésitez pas à me contacter pour en discuter. Je serais ravie de vous
             accompagner dans sa réalisation.
           </p>
@@ -42,54 +51,54 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Informations de contact */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Restons en contact</h3>
+            <h3 className="text-2xl font-bold text-neutral-100 mb-8">Restons en contact</h3>
             <div className="space-y-6">
               <div className="flex items-center">
-                <div className="bg-purple-100 p-3 rounded-full mr-4">
-                  <Mail className="text-purple-600" size={24} />
+                <div className="bg-orange-500/10 border border-orange-500/20 p-3 rounded-full mr-4">
+                  <Mail className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Email</h4>
-                  <p className="text-gray-600">christdebo68@gmail.com</p>
+                  <h4 className="font-semibold text-neutral-100">Email</h4>
+                  <p className="text-neutral-300">christdebo68@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="bg-purple-100 p-3 rounded-full mr-4">
-                  <Phone className="text-purple-600" size={24} />
+                <div className="bg-orange-500/10 border border-orange-500/20 p-3 rounded-full mr-4">
+                  <Phone className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Téléphone</h4>
-                  <p className="text-gray-600">+229 01 96 21 23 10</p>
+                  <h4 className="font-semibold text-neutral-100">Téléphone</h4>
+                  <p className="text-neutral-300">+229 01 96 21 23 10</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="bg-purple-100 p-3 rounded-full mr-4">
-                  <MapPin className="text-purple-600" size={24} />
+                <div className="bg-orange-500/10 border border-orange-500/20 p-3 rounded-full mr-4">
+                  <MapPin className="text-orange-500" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Localisation</h4>
-                  <p className="text-gray-600">Cotonou, Bénin</p>
+                  <h4 className="font-semibold text-neutral-100">Localisation</h4>
+                  <p className="text-neutral-300">Cotonou, Bénin</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-12">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">Pourquoi me choisir ?</h4>
+              <h4 className="text-lg font-semibold text-neutral-100 mb-4">Pourquoi me choisir ?</h4>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                <li className="flex items-center text-neutral-300">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                   Réponse rapide sous 24h
                 </li>
-                <li className="flex items-center text-gray-600">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                <li className="flex items-center text-neutral-300">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                   Devis gratuit et détaillé
                 </li>
-                <li className="flex items-center text-gray-600">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                <li className="flex items-center text-neutral-300">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                   Accompagnement personnalisé
                 </li>
-                <li className="flex items-center text-gray-600">
-                  <div className="w-2 h-2 bg-purple-600 rounded-full mr-3"></div>
+                <li className="flex items-center text-neutral-300">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
                   Livraison dans les délais
                 </li>
               </ul>
@@ -97,12 +106,12 @@ export default function Contact() {
           </div>
 
           {/* Formulaire de contact */}
-          <Card className="shadow-lg">
+          <Card className="bg-neutral-950/40 border border-neutral-800 shadow-xl shadow-black/40">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-2">
                       Nom complet
                     </label>
                     <input
@@ -112,12 +121,12 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-neutral-800 bg-neutral-950/40 text-neutral-100 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors outline-none"
                       placeholder="Votre nom"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-2">
                       Email
                     </label>
                     <input
@@ -127,13 +136,13 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-neutral-800 bg-neutral-950/40 text-neutral-100 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors outline-none"
                       placeholder="votre@email.com"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-neutral-300 mb-2">
                     Sujet
                   </label>
                   <input
@@ -143,12 +152,12 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 border border-neutral-800 bg-neutral-950/40 text-neutral-100 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors outline-none"
                     placeholder="Sujet de votre message"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-neutral-300 mb-2">
                     Message
                   </label>
                   <textarea
@@ -158,14 +167,14 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-colors resize-none"
+                    className="w-full px-4 py-3 border border-neutral-800 bg-neutral-950/40 text-neutral-100 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors resize-none outline-none"
                     placeholder="Décrivez votre projet..."
                   ></textarea>
                 </div>
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white flex items-center justify-center gap-2"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-neutral-950 flex items-center justify-center gap-2 shadow-lg shadow-orange-500/20 font-semibold"
                 >
                   <Send size={20} />
                   Envoyer le message
@@ -177,11 +186,11 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-20 pt-12 border-t border-gray-200">
+      <footer className="mt-20 pt-12 border-t border-neutral-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-gray-600">© 2025 Christiane - Développeuse Web Full-Stack. Tous droits réservés.</p>
-            <p className="text-gray-500 mt-2">Créé avec ❤️ et Next.js</p>
+            <p className="text-neutral-300">© 2026 Christiane - Développeuse Web Full-Stack. Tous droits réservés.</p>
+            <p className="text-neutral-500 mt-2">Créé avec Next.js</p>
           </div>
         </div>
       </footer>
