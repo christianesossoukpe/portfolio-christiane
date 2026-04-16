@@ -1,6 +1,6 @@
-import { ExternalLink, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { ExternalLink, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Projects() {
   const projects = [
@@ -18,11 +18,13 @@ export default function Projects() {
       description:
         "Ce projet est une application web permettant aux utilisateurs de **passer des commandes sur des articles** donnés. L’application offre une navigation fluide entre plusieurs sections, une gestion multilingue (Français / Anglais) et une intégration visuelle moderne avec animations 3D grâce à `react-fiber`.",
       image: "/projects/image3d.png",
-      technologies: ["React",
-"react-router-dom",
-"react-i18next",
-"React Context API",
-"Tailwind CSS"],
+      technologies: [
+        "React",
+        "react-router-dom",
+        "react-i18next",
+        "React Context API",
+        "Tailwind CSS",
+      ],
       liveUrl: "https://reat3d-site-de-commande.vercel.app/",
       githubUrl: "https://github.com/christianesossoukpe/reat3d",
     },
@@ -32,11 +34,13 @@ export default function Projects() {
       image: "/projects/note-de-musique.jpg",
       technologies: ["Flutter", "Spring Boot", "Tailwind CSS"],
       liveUrl: "#",
-      githubUrl: "https://github.com/christianesossoukpe/appmusic_flutter_spring",
+      githubUrl:
+        "https://github.com/christianesossoukpe/appmusic_flutter_spring",
     },
     {
       title: "Application de vente de succettes",
-      description: "Application de vente de succettes avec gestion des commandes et des utilisateurs.",
+      description:
+        "Application de vente de succettes avec gestion des commandes et des utilisateurs.",
       image: "/projects/istockphoto-841984628-612x612.jpg",
       technologies: ["Typescipt", "Angular", "MySQL", "CSS"],
       liveUrl: "https://chrissaveurs-site-sucettes.vercel.app/accueil",
@@ -48,29 +52,21 @@ export default function Projects() {
         "Site vitrine de bijouterie haut de gamme avec présentation de collections, filtrage par catégories et mise en avant des avantages clients.",
       image: "/projects/imagebijoux.png",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
-      liveUrl: "https://chris-jewelry.vercel.app/",
+      liveUrl: "https://eleganceRoyalebyChrisy.vercel.app/",
       githubUrl: "",
     },
-    {
-      title: "Mon Portfolio",
-      description: "Portfolio personnel pour présenter mes compétences et projets.",
-      image: "/projects/portof.png",
-      technologies: ["Next.js 14",
-"TypeScript",
-"Tailwind CSS",
-"Lucide React"],
-      liveUrl: "https://portfolio-christiane.vercel.app/",
-      githubUrl: "https://github.com/christianesossoukpe/portfolio-christiane",
-    },
-  ]
+  ];
 
   return (
     <section id="projets" className="py-20 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-neutral-100 mb-4">Mes projets</h2>
+          <h2 className="text-4xl font-bold text-neutral-100 mb-4">
+            Mes projets
+          </h2>
           <p className="text-xl text-neutral-300 max-w-3xl mx-auto">
-            Découvrez une sélection de mes réalisations récentes qui démontrent mon expertise et ma créativité.
+            Découvrez une sélection de mes réalisations récentes qui démontrent
+            mon expertise et ma créativité.
           </p>
         </div>
 
@@ -89,8 +85,12 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-neutral-100 mb-3">{project.title}</h3>
-                <p className="text-neutral-300 mb-4 leading-relaxed">{project.description}</p>
+                <h3 className="text-xl font-bold text-neutral-100 mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-neutral-300 mb-4 leading-relaxed">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
                     <span
@@ -127,5 +127,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
